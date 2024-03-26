@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atalanta Cafe Management System</title>
+<style>
+    /* CSS styling */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #654321, #1e90ff); /* Brown and Blue background */
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 0 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .dashboard {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    .dashboard div {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<header>
+    
+        <img src="logo.jpeg" alt="Atlanta Cafe Logo" style="width: 100px; height: 100px;">
+        <h1>Atlanta Cafe Management System</h1>
+    
+
+</header>
+<div class="container">
+    <h2>Dashboard</h2>
+    <div class="dashboard">
+        <a href="admin.html"><div id="admin">Admin</div></a>
+        <a href="kitchen.html"><div id="kitchen">Kitchen</div></a>
+        <a href="chef.html"><div id="chef">Chef</div></a>
+        <a href="customer.html"><div id="customer">Customer</div></a>
+    </div>
+</div>
+
+<script>
+    // JavaScript code
+    const password = "cafe123";
+
+    function accessDashboard(user) {
+        if (user === "admin" || user === "kitchen" || user === "chef" || user === "customer") {
+            if (user === "admin" || password === "cafe123") {
+                console.log(`Accessing ${user} dashboard...`);
+                // Add functionality for each dashboard here
+            } else {
+                console.log("Incorrect password. Access denied.");
+            }
+        } else {
+            console.log("Invalid user.");
+        }
+    }
+
+    document.getElementById("admin").addEventListener("click", function() {
+        accessDashboard("admin");
+    });
+
+    document.getElementById("kitchen").addEventListener("click", function() {
+        accessDashboard("kitchen");
+    });
+
+    document.getElementById("chef").addEventListener("click", function() {
+        accessDashboard("chef");
+    });
+
+    document.getElementById("customer").addEventListener("click", function() {
+        accessDashboard("customer");
+    });
+</script>
+</body>
+</html>

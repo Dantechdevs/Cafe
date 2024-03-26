@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atalanta Cafe Management System</title>
+<style>
+    /* CSS styling */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #3498db; /* Blue background color */
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+    button {
+        padding: 5px 10px;
+        margin-right: 10px;
+    }
+    .logo {
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <img src="logo.jpeg" alt="Atalanta Cafe Logo" class="logo"> <!-- Replace 'logo.png' with the path to your logo image -->
+    
+    <h2>Login</h2>
+    <form>
+        <input type="text" placeholder="Username"><br><br>
+        <input type="password" placeholder="Password"><br><br>
+        <button type="submit">Login</button>
+    </form>
+    
+    <h1>Admin Panel</h1>
+    
+    <h3>Add New Item:</h3>
+    <input type="text" id="newItem" placeholder="Enter item name">
+    <button onclick="addItem()">Add Item</button>
+    
+    <h3>Update Item:</h3>
+    <input type="text" id="updateItem" placeholder="Enter item name">
+    <button onclick="updateItem()">Update Item</button>
+    
+    <h3>Delete Item:</h3>
+    <input type="text" id="deleteItem" placeholder="Enter item name">
+    <button onclick="deleteItem()">Delete Item</button>
+</div>
+
+<script>
+    // JavaScript functionality
+    function addItem() {
+        var newItem = document.getElementById('newItem').value;
+        // Add your logic to add the item to the system
+        console.log('Adding item: ' + newItem);
+    }
+    
+    function updateItem() {
+        var updateItem = document.getElementById('updateItem').value;
+        // Add your logic to update the item in the system
+        console.log('Updating item: ' + updateItem);
+    }
+    
+    function deleteItem() {
+        var deleteItem = document.getElementById('deleteItem').value;
+        // Add your logic to delete the item from the system
+        console.log('Deleting item: ' + deleteItem);
+    }
+</script>
+</body>
+</html>
