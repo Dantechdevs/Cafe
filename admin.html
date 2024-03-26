@@ -36,9 +36,9 @@
     
     <h2>Login</h2>
     <form>
-        <input type="text" placeholder="Username"><br><br>
-        <input type="password" placeholder="Password"><br><br>
-        <button type="submit">Login</button>
+        <input type="text" id="username" placeholder="Username"><br><br>
+        <input type="password" id="password" placeholder="Password"><br><br>
+        <button type="button" onclick="login()">Login</button>
     </form>
     
     <h1>Admin Panel</h1>
@@ -58,22 +58,45 @@
 
 <script>
     // JavaScript functionality
+    var isAdminLoggedIn = false;
+
+    function login() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        if (username === 'admin' && password === 'password') {
+            isAdminLoggedIn = true;
+            alert('Login successful. You are now logged in as an admin.');
+        } else {
+            alert('Invalid username or password. Please try again.');
+        }
+    }
+
     function addItem() {
-        var newItem = document.getElementById('newItem').value;
-        // Add your logic to add the item to the system
-        console.log('Adding item: ' + newItem);
+        if (isAdminLoggedIn) {
+            var newItem = document.getElementById('newItem').value;
+            console.log('Adding item: ' + newItem);
+        } else {
+            alert('Please login as an admin first.');
+        }
     }
-    
+
     function updateItem() {
-        var updateItem = document.getElementById('updateItem').value;
-        // Add your logic to update the item in the system
-        console.log('Updating item: ' + updateItem);
+        if (isAdminLoggedIn) {
+            var updateItem = document.getElementById('updateItem').value;
+            console.log('Updating item: ' + updateItem);
+        } else {
+            alert('Please login as an admin first.');
+        }
     }
-    
+
     function deleteItem() {
-        var deleteItem = document.getElementById('deleteItem').value;
-        // Add your logic to delete the item from the system
-        console.log('Deleting item: ' + deleteItem);
+        if (isAdminLoggedIn) {
+            var deleteItem = document.getElementById('deleteItem').value;
+            console.log('Deleting item: ' + deleteItem);
+        } else {
+            alert('Please login as an admin first.');
+        }
     }
 </script>
 </body>
